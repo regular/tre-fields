@@ -1,6 +1,6 @@
 {
   "name": "tre-field-observer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "get observers for ssb message content fields and rendered dom elements referred to by those fields",
   "main": "index.js",
   "scripts": {
