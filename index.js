@@ -12,7 +12,8 @@ module.exports = function(ssb) {
     opts = opts || {}
     
     const defaultMergeOpts = opts.mergeOpts || {
-      allowAllAuthors: true
+      allowAllAuthors: true,
+      suppressIntermediate: true
     }
     
     const defaultRenderCtx = opts.renderCtx || {
