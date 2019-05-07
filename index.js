@@ -23,14 +23,16 @@ module.exports = function(ssb) {
 
     const previewObs = ctx.previewObs || Value(kv)
 
-    function get_from_msg(path) {
+    function get_from_msg(path, defaultValue) {
       return computed(previewObs, o => {
-        return o && pathway(o, path.split('.'))[0]
+        const ret = o && pathway(o, path.split('.'))[0]
+        if (ret == undefined || ret == null) return defaultValue
+        return ret
       })
     }
 
-    function get(path) {
-      return get_from_msg(`value.content.${path}`)
+    function get(path, defaultValue) {
+      return get_from_msg(`value.content.${path}`, defaultValue)
     }
 
     function getDOMElement(path, render, opts) {
